@@ -86,7 +86,7 @@ function loginUser($email, $password)
                     mysqli_close($conn);
                     exit();
                 } else {
-                    echo "<script> alert('Password mismatch') </script>";
+                    header("Location: ../forms/login.html?wrongpassword");
                     exit();
                 }
             } else {
@@ -130,7 +130,7 @@ function resetPassword($email, $passwordii)
             $assoc = mysqli_fetch_assoc($rslt);
 
             if (!$assoc['email'] == $email) {
-                echo "<script> alert('User doesn't exist') </script>";
+                echo "User doesn't exist";
                 exit();
             } else {
                 $hashedPassi = password_hash($passwordii, PASSWORD_DEFAULT);
