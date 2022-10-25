@@ -34,7 +34,7 @@
       <?php
       session_start();
       if (isset($_SESSION)) {
-        echo $_SESSION['username'];
+        echo "Student w/ID " . $_SESSION['Username'];
       }
       ?>
     </h1>

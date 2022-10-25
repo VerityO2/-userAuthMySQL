@@ -31,9 +31,10 @@ switch (true) {
 
 
     case isset($_POST["reset"]):
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        resetPassword($email, $password);
+        $email = trim($_POST['email']);
+        $passwordii = trim($_POST['password']);
+
+        resetPassword($email, $passwordii);
         break;
 
 
