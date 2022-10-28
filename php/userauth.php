@@ -75,7 +75,7 @@ function loginUser($email, $password)
             $rslt = mysqli_stmt_get_result($stmti);
             $rows = mysqli_num_rows($rslt);
 
-            if ($rows > 1) {
+            if ($rows >= 1) {
                 $assoc = mysqli_fetch_assoc($rslt);
                 $verifyPassword = password_verify($password, $assoc['passwords']);
                 if ($verifyPassword == true) {
@@ -189,7 +189,6 @@ function getusers()
     <td style='width: 160px'>" . $data['email'] . "</td>
     <td style='width: 160px'>" . $data['gender'] .  "</td>
     <td style='width: 160px'>" . $data['country'] . "</td>
-
     <form action='action.php' method='post'><td> <button type='submit' name='delete'
     value=" . $data['id'] . "> DELETE </button>" . "</tr>";
         }
